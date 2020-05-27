@@ -2,6 +2,7 @@ package com.example.whack_a_mole30;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,7 @@ public class LevelAdapter extends RecyclerView.Adapter<LevelViewHolder> {
                 }
             }
         });
+        Log.v("Level Adapter", "Showing level "+ level + " with highest score: " + data[position]);
     }
 
     @Override

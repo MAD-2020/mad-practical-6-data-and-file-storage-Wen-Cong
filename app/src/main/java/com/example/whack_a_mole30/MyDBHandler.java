@@ -51,6 +51,8 @@ public class MyDBHandler extends SQLiteOpenHelper {
             SQLiteDatabase database = this.getWritableDatabase();
             database.insert(TABLE_USERS, null, values);
             database.close();
+            Log.v("Added Data", "Username=" + user.getUsername() + " Password=" + user.getPassword() + " Level="
+            + (i+1) + " Score=" + user.getScoreList()[i]);
         }
     }
 
@@ -66,7 +68,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
             user.setUsername(cursor.getString(0));
             user.setPassword(cursor.getString(1));
             Log.v(TAG, "User name: " + user.getUsername() + " Found!");
-            Log.v(TAG, "Score List" + user.getScoreList()[0]);
 
             int[] score = user.getScoreList();
             score[count] = Integer.parseInt(cursor.getString(3));

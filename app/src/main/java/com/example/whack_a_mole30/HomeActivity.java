@@ -49,6 +49,7 @@ public class HomeActivity extends AppCompatActivity {
 
         for(int i = 0; i < user.getScoreList().length; i++){
             dbHandler.updateScore(user.getUsername(),i+1,user.getScoreList()[i]);
+            Log.v(TAG, "Updated level "+ (i+1) + " with highest score: " + user.getScoreList()[i]);
         }
     }
 }

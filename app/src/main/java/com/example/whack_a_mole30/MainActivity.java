@@ -33,11 +33,12 @@ public class MainActivity extends AppCompatActivity {
                 String name = username_login.getText().toString().trim();
                 String pw = password_login.getText().toString().trim();
                 User user = dbHandler.loadUser(name);
+                Log.v(TAG, "Logging in with " + name);
                 if(user != null){
                     if(user.getPassword().equals(pw)){
                         Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                         intent.putExtra("User", user);
-                        Log.v(TAG, user.getScoreList().length + " item in list loaded");
+                        Log.v(TAG, "Logging in Successful -- " + user.getUsername());
                         startActivity(intent);
                     }
                     else{
