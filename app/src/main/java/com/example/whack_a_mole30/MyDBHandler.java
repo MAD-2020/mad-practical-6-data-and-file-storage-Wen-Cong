@@ -74,14 +74,16 @@ public class MyDBHandler extends SQLiteOpenHelper {
             count++;
         }
 
-        if(cursor.moveToNext()){
+        while(cursor.moveToNext()){
             int[] score = user.getScoreList();
             score[count] = Integer.parseInt(cursor.getString(3));
             user.setScoreList(score);
             count++;
         }
+
         cursor.close();
         db.close();
+
         return user;
     }
 
@@ -94,4 +96,6 @@ public class MyDBHandler extends SQLiteOpenHelper {
         db.close();
         Log.v(TAG, "Data Updated!");
     }
+
+
 }

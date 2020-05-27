@@ -71,9 +71,7 @@ public class Game2 extends AppCompatActivity {
         toHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //MyDBHandler dbHandler = new MyDBHandler(Game2.this, null, null, 1);
                 Log.v(TAG, "Current return Score: " + highScore);
-                //dbHandler.updateScore(user.getUsername(), level, highScore);
                 int[] list = user.getScoreList();
                 list[level-1] = highScore;
                 user.setScoreList(list);

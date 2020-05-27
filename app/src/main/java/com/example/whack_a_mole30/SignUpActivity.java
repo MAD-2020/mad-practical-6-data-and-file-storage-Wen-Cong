@@ -42,6 +42,8 @@ public class SignUpActivity extends AppCompatActivity {
                     user = new User(name, pw);
                     dbHandler.addUser(user);
                     Toast.makeText(SignUpActivity.this, "Profile Created Successfully!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(SignUpActivity.this, "User Existed, Sign In instead!", Toast.LENGTH_SHORT).show();
